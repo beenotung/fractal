@@ -35,7 +35,6 @@ public class FractalFrame extends JFrame implements Runnable {
 		setVisible(true);
 		fractalCanvas.setVisible(true);
 		while (alive) {
-			System.out.println("update");
 			try {
 				render();
 			} catch (Exception e1) {
