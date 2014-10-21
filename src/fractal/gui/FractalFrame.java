@@ -1,18 +1,8 @@
 package fractal.gui;
 
 import java.awt.BorderLayout;
-import java.awt.Canvas;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
-
 import javax.swing.JFrame;
-
-import myutils.Utils;
 
 public class FractalFrame extends JFrame implements Runnable {
 
@@ -41,7 +31,7 @@ public class FractalFrame extends JFrame implements Runnable {
 				fractalCanvas.start();
 			}
 			try {
-				thread.sleep(1000);
+				thread.sleep(1000/60);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

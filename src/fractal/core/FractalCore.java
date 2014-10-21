@@ -10,12 +10,12 @@ public class FractalCore {
 	private FractalFrame fractalFrame;
 	private FractalIterator fractalIterator;
 
-	public FractalCore(int width, int height, float scale) {
+	public FractalCore(int width, int height, float scale, double rate) {
 		WIDTH = width;
 		HEIGHT = height;
 		SCALE = scale;
 		fractalFrame = new FractalFrame(WIDTH, HEIGHT, SCALE);
-		fractalIterator = new FractalIterator(fractalFrame.getFractalCanvas());
+		fractalIterator = new FractalIterator(fractalFrame.getFractalCanvas(),rate);
 	}
 
 	public void start() {

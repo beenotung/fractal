@@ -1,12 +1,16 @@
 package fractal.core;
 
-import java.awt.geom.Point2D;
+import java.awt.geom.Line2D;
+import java.util.Vector;
 
 public class Layer {
-	public Point2D start, end;
+	public Vector<Line2D> lines;
 
-	public Layer(Point2D start, Point2D end) {
-		this.start = start;
-		this.end = end;
+	public Layer(Vector<Line2D> lines) {
+		this.lines = lines;
+	}
+
+	public Layer() {
+		lines = new Vector<Line2D>();
 	}
 }

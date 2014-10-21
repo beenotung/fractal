@@ -2,6 +2,7 @@ package fractal.gui;
 
 import java.awt.Canvas;
 import java.awt.Graphics;
+import java.awt.geom.Line2D;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
@@ -13,8 +14,9 @@ public class FractalCanvas extends Canvas {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private final int WIDTH, HEIGHT;
-	private final float SCALE;
+	public final int WIDTH;
+	public final int HEIGHT;
+	public final float SCALE;
 	private BufferedImage bufferedImage;
 	private int[] pixels;
 
@@ -48,8 +50,15 @@ public class FractalCanvas extends Canvas {
 	public void render() throws Exception {
 		if (!alive)
 			throw new Exception("Canvas not alive");
-		graphics.drawImage(bufferedImage, 0, 0, WIDTH, HEIGHT, null);
+		// graphics.drawImage(bufferedImage, 0, 0, WIDTH, HEIGHT, null);
 		bufferStrategy.show();
+	}
+
+	public void drawLine(Line2D line2d) {
+		graphics.drawLine(Math.round(Math.round(line2d.getX1())),
+				Math.round(Math.round(line2d.getY1())),
+				Math.round(Math.round(line2d.getX2())),
+				Math.round(Math.round(line2d.getY2())));
 	}
 
 	public void start() {
